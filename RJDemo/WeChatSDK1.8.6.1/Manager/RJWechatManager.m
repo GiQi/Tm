@@ -7,14 +7,6 @@
 
 #import "RJWechatManager.h"
 
-@interface RJWechatManager ()
-
-@property(nonatomic,strong)completionBlock tempBlock;
-@property(nonatomic,strong)completionBlock respBlock;
-@property(nonatomic,strong)completionBlock reqBlock;
-
-@end
-
 @implementation RJWechatManager
 
 #pragma mark - LifeCycle
@@ -29,22 +21,39 @@
 
 +(void)sendAuthRequest:(completionBlock)block viewController:(UIViewController*)controller delegate:(id)delegate
 {
-   SendAuthReq* req    =[[SendAuthReq alloc]init];
-    req.scope = kAuthScope;
-    req.state = kAuthState;
-    req.openID = kAuthOpenID;
-    //第三方向微信终端发送一个SendAuthReq消息结构
-    [WXApi sendAuthReq:req viewController:controller delegate:[RJWechatManager sharedManager] completion:^(BOOL success) {
-        if (block) {
-            block(success);
-        }
-    }];
+    if ([WXApi isWXAppInstalled]) {
+        SendAuthReq* req    =[[SendAuthReq alloc]init];
+        req.scope = kAuthScope;
+        req.state = kAuthState;
+        req.openID = kAuthOpenID;
+        //第三方向微信终端发送一个SendAuthReq消息结构
+        [WXApi sendAuthReq:req viewController:controller delegate:[RJWechatManager sharedManager] completion:^(BOOL success) {
+            if (block) {
+                block(success);
+            }
+        }];
+
+    }else{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"未安装微信" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://apps.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124"]];
+            
+        }];
+        [alert addAction:action];
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window.rootViewController presentViewController:alert animated:YES completion:nil];
         
+    }
+}
+
++(void)registerAppID:(NSString*)appId universalLink:(NSString*)link
+{
+        [WXApi registerApp:appId universalLink:link];
 }
 
 -(void)onReq:(BaseReq *)req
 {
-    
+    [_delegate responseOnReq:req];
 }
 
 -(void)onResp:(BaseResp *)resp
@@ -75,26 +84,17 @@
             [self sendAsync:request];
             
             NSLog(@"---------已经发出请求");
-            
-            
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                            message:@"微信授权成功!"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
-            
+            [self showMessage:@"微信授权成功!" andBlock:^{
+                
+            }];
         }
             break;
             
         default:
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                            message:@"微信授权失败!"
-                                                           delegate:self
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil, nil];
-            [alert show];
+            [self showMessage:@"微信授权失败!" andBlock:^{
+                
+            }];
         }
             break;
     }
@@ -103,28 +103,48 @@
 - (void)sendAsync:(NSURLRequest *)request
 {
     NSOperationQueue *queue = [NSOperationQueue mainQueue];
+//    [NSURLSession dataTaskWithRequest:completionHandler:]
+//    [NSURLSession]
     [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-    if (data) { // 请求成功
-        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-        NSString *error = dict[@"errcode"];
-        if (error) { // 登录失败
-            NSLog(@"请求失败!");
-        } else {     // 登录成功
-            NSString *access_token  =  dict[@"access_token"]; // 接口调用凭证(有效期2h)
-            NSString *openid        =  dict[@"openid"];       // 授权用户唯一标识
-            
-            NSLog(@"openid=%@"      ,openid);
-            NSLog(@"access_token=%@",access_token);
-//            NSDictionary *dict = [[NSDictionary alloc]init];
-//            [dict setValue:openid forKey:@"openid"];
-//            [dict setValue:access_token forKey:@"token"];
-            [_delegate ResponseOnResp:dict];
-            NSLog(@"请求成功!");
+        if (data) { // 请求成功
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+            NSString *error = dict[@"errcode"];
+            if (error) { // 登录失败
+                NSLog(@"请求失败!");
+            } else {     // 登录成功
+                NSString *access_token  =  dict[@"access_token"]; // 接口调用凭证(有效期2h)
+                NSString *openid        =  dict[@"openid"];       // 授权用户唯一标识
+                
+                NSLog(@"openid=%@"      ,openid);
+                NSLog(@"access_token=%@",access_token);
+                if (_delegate && [_delegate respondsToSelector:@selector(ResponseOnResp:)]) {
+                    [_delegate responseOnResp:dict];
+                    NSLog(@"请求成功!");
+                }
+                NSLog(@"请求成功!");
+            }
+        } else { // 请求失败
+            NSLog(@"网络繁忙, 请稍后再试");
         }
-    } else { // 请求失败
-        NSLog(@"网络繁忙, 请稍后再试");
-    }
-}];
+    }];
 }
+
+-(void)showMessage:(NSString*)message andBlock:(void(^ __nullable)(void))templateBlock
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (templateBlock) {
+            templateBlock();
+        }
+        //                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://apps.apple.com/cn/app/%E5%BE%AE%E4%BF%A1/id414478124"]];
+        
+    }];
+    [alert addAction:action];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    [window.rootViewController presentViewController:alert animated:YES completion:nil];
+    
+}
+
+
 
 @end
