@@ -1,0 +1,6 @@
+framework module RJManagerTool {
+  umbrella header "RJManagerTool.h"
+
+  export *
+  module * { export * }
+}
