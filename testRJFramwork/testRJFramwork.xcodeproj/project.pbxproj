@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180AECFB2404D5A600F3EAE9 /* RJManagerTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180AECFA2404D5A600F3EAE9 /* RJManagerTool.framework */; };
 		1857F30323D2E6A900914FB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1857F30223D2E6A900914FB9 /* AppDelegate.m */; };
 		1857F30623D2E6A900914FB9 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1857F30523D2E6A900914FB9 /* SceneDelegate.m */; };
 		1857F30923D2E6A900914FB9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1857F30823D2E6A900914FB9 /* ViewController.m */; };
@@ -21,10 +22,10 @@
 		1857F32C23D3092900914FB9 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1857F32B23D3092900914FB9 /* libz.tbd */; };
 		1857F32E23D30CEB00914FB9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1857F32D23D30CEB00914FB9 /* SystemConfiguration.framework */; };
 		1857F33023D30EF000914FB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1857F32F23D30EF000914FB9 /* Foundation.framework */; };
-		1857F33423D3139000914FB9 /* RJManagerTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1857F33323D3139000914FB9 /* RJManagerTool.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180AECFA2404D5A600F3EAE9 /* RJManagerTool.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RJManagerTool.framework; sourceTree = "<group>"; };
 		1857F2FE23D2E6A900914FB9 /* testRJFramwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testRJFramwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1857F30123D2E6A900914FB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1857F30223D2E6A900914FB9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,7 +46,6 @@
 		1857F32B23D3092900914FB9 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1857F32D23D30CEB00914FB9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1857F32F23D30EF000914FB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1857F33323D3139000914FB9 /* RJManagerTool.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RJManagerTool.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1857F33423D3139000914FB9 /* RJManagerTool.framework in Frameworks */,
+				180AECFB2404D5A600F3EAE9 /* RJManagerTool.framework in Frameworks */,
 				1857F33023D30EF000914FB9 /* Foundation.framework in Frameworks */,
 				1857F32E23D30CEB00914FB9 /* SystemConfiguration.framework in Frameworks */,
 				1857F32C23D3092900914FB9 /* libz.tbd in Frameworks */,
@@ -87,7 +87,7 @@
 		1857F30023D2E6A900914FB9 /* testRJFramwork */ = {
 			isa = PBXGroup;
 			children = (
-				1857F33323D3139000914FB9 /* RJManagerTool.framework */,
+				180AECFA2404D5A600F3EAE9 /* RJManagerTool.framework */,
 				1857F30123D2E6A900914FB9 /* AppDelegate.h */,
 				1857F30223D2E6A900914FB9 /* AppDelegate.m */,
 				1857F30423D2E6A900914FB9 /* SceneDelegate.h */,
@@ -337,8 +337,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/testRJFramwork",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = testRJFramwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -364,8 +366,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/testRJFramwork",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = testRJFramwork/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

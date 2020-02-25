@@ -49,7 +49,21 @@ typedef void (^respBlock)(BaseResp* resp);
 */
 +(void)sendAuthRequest:(nullable completionBlock)block viewController:(UIViewController*)controller delegate:(id)delegate;
 +(void)registerAppID:(NSString*)appId universalLink:(NSString*)link;
+/*! @brief 发送Auth请求到微信，支持用户没安装微信，等待微信返回onReq
+ @param title 标题消息
+ @param extInfo 额外消息 传给第三方处理
+ @param url 微信终端会回传给第三方程序处理
+ @param description 内容
+ @param scene 发送场景
+ */
++(void)sendAppContentTitle:(NSString *)title
+                   extInfo:(NSString *)extInfo
+                       Url:(NSString *)url
+               Description:(NSString *)description
+                     Scene:(enum WXScene)scene;
 
++(void)sendAppContentText:(NSString *)text
+                    Scene:(enum WXScene)scene;
 @end
 NS_ASSUME_NONNULL_END
 

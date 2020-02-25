@@ -21,6 +21,10 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		180AECF22404BF9400F3EAE9 /* WXMediaMessage+MessageConstruct.h in Headers */ = {isa = PBXBuildFile; fileRef = 180AECF02404BF9400F3EAE9 /* WXMediaMessage+MessageConstruct.h */; };
+		180AECF32404BF9400F3EAE9 /* WXMediaMessage+MessageConstruct.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AECF12404BF9400F3EAE9 /* WXMediaMessage+MessageConstruct.m */; };
+		180AECF62404C58500F3EAE9 /* SendMessageToWXReq+requestMediaMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 180AECF42404C58500F3EAE9 /* SendMessageToWXReq+requestMediaMessage.h */; };
+		180AECF72404C58500F3EAE9 /* SendMessageToWXReq+requestMediaMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 180AECF52404C58500F3EAE9 /* SendMessageToWXReq+requestMediaMessage.m */; };
 		1857F2CA23D2D9A200914FB9 /* RJManagerTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 1857F2C823D2D9A200914FB9 /* RJManagerTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1857F2E123D2D9E100914FB9 /* RJButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 1857F2D023D2D9E100914FB9 /* RJButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1857F2E323D2D9E100914FB9 /* WXApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 1857F2D323D2D9E100914FB9 /* WXApi.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,9 +39,17 @@
 		1857F2EC23D2D9E100914FB9 /* ResultOfSearchVC.h in Headers */ = {isa = PBXBuildFile; fileRef = 1857F2DE23D2D9E100914FB9 /* ResultOfSearchVC.h */; };
 		1857F2ED23D2D9E100914FB9 /* InviteFriendsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1857F2DF23D2D9E100914FB9 /* InviteFriendsVC.m */; };
 		1857F2EE23D2D9E100914FB9 /* RJButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1857F2E023D2D9E100914FB9 /* RJButton.m */; };
+		18F15C2923D453FB00D21517 /* LoginView.h in Headers */ = {isa = PBXBuildFile; fileRef = 18F15C2723D453FB00D21517 /* LoginView.h */; };
+		18F15C2A23D453FB00D21517 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F15C2823D453FB00D21517 /* LoginView.m */; };
+		18F15C2D23D466A700D21517 /* RJLoginViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 18F15C2B23D466A700D21517 /* RJLoginViewController.h */; };
+		18F15C2E23D466A700D21517 /* RJLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F15C2C23D466A700D21517 /* RJLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180AECF02404BF9400F3EAE9 /* WXMediaMessage+MessageConstruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WXMediaMessage+MessageConstruct.h"; sourceTree = "<group>"; };
+		180AECF12404BF9400F3EAE9 /* WXMediaMessage+MessageConstruct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WXMediaMessage+MessageConstruct.m"; sourceTree = "<group>"; };
+		180AECF42404C58500F3EAE9 /* SendMessageToWXReq+requestMediaMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SendMessageToWXReq+requestMediaMessage.h"; sourceTree = "<group>"; };
+		180AECF52404C58500F3EAE9 /* SendMessageToWXReq+requestMediaMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SendMessageToWXReq+requestMediaMessage.m"; sourceTree = "<group>"; };
 		1857F2C523D2D9A200914FB9 /* RJManagerTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RJManagerTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1857F2C823D2D9A200914FB9 /* RJManagerTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RJManagerTool.h; sourceTree = "<group>"; };
 		1857F2C923D2D9A200914FB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +66,10 @@
 		1857F2DE23D2D9E100914FB9 /* ResultOfSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultOfSearchVC.h; sourceTree = "<group>"; };
 		1857F2DF23D2D9E100914FB9 /* InviteFriendsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendsVC.m; sourceTree = "<group>"; };
 		1857F2E023D2D9E100914FB9 /* RJButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJButton.m; sourceTree = "<group>"; };
+		18F15C2723D453FB00D21517 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		18F15C2823D453FB00D21517 /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		18F15C2B23D466A700D21517 /* RJLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RJLoginViewController.h; sourceTree = "<group>"; };
+		18F15C2C23D466A700D21517 /* RJLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +84,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		180AECDF2404B1A600F3EAE9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				180AECF02404BF9400F3EAE9 /* WXMediaMessage+MessageConstruct.h */,
+				180AECF12404BF9400F3EAE9 /* WXMediaMessage+MessageConstruct.m */,
+				180AECF42404C58500F3EAE9 /* SendMessageToWXReq+requestMediaMessage.h */,
+				180AECF52404C58500F3EAE9 /* SendMessageToWXReq+requestMediaMessage.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		1857F2BB23D2D9A200914FB9 = {
 			isa = PBXGroup;
 			children = (
@@ -87,10 +114,12 @@
 		1857F2C723D2D9A200914FB9 /* RJManagerTool */ = {
 			isa = PBXGroup;
 			children = (
-				1857F2DB23D2D9E100914FB9 /* InviteFriends */,
-				1857F2D023D2D9E100914FB9 /* RJButton.h */,
-				1857F2E023D2D9E100914FB9 /* RJButton.m */,
-				1857F2D123D2D9E100914FB9 /* WeChatSDK1.8.6.1 */,
+				180AECDF2404B1A600F3EAE9 /* Helper */,
+				18F15C2623D4506100D21517 /* Additions */,
+				18F15C2523D411FA00D21517 /* Managers */,
+				18F15C2423D411C900D21517 /* Modles */,
+				18F15C2323D3F75800D21517 /* Controller */,
+				18F15C2123D3F72C00D21517 /* Views */,
 				1857F2C823D2D9A200914FB9 /* RJManagerTool.h */,
 				1857F2C923D2D9A200914FB9 /* Info.plist */,
 			);
@@ -101,22 +130,12 @@
 			isa = PBXGroup;
 			children = (
 				1857F2D323D2D9E100914FB9 /* WXApi.h */,
-				1857F2D423D2D9E100914FB9 /* Manager */,
 				1857F2D723D2D9E100914FB9 /* WXApiObject.h */,
 				1857F2D823D2D9E100914FB9 /* README.txt */,
 				1857F2D923D2D9E100914FB9 /* WechatAuthSDK.h */,
 				1857F2DA23D2D9E100914FB9 /* libWeChatSDK.a */,
 			);
 			path = WeChatSDK1.8.6.1;
-			sourceTree = "<group>";
-		};
-		1857F2D423D2D9E100914FB9 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				1857F2D523D2D9E100914FB9 /* RJWechatManager.h */,
-				1857F2D623D2D9E100914FB9 /* RJWechatManager.m */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		1857F2DB23D2D9E100914FB9 /* InviteFriends */ = {
@@ -130,6 +149,51 @@
 			path = InviteFriends;
 			sourceTree = "<group>";
 		};
+		18F15C2123D3F72C00D21517 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1857F2D023D2D9E100914FB9 /* RJButton.h */,
+				1857F2E023D2D9E100914FB9 /* RJButton.m */,
+				18F15C2723D453FB00D21517 /* LoginView.h */,
+				18F15C2823D453FB00D21517 /* LoginView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		18F15C2323D3F75800D21517 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18F15C2B23D466A700D21517 /* RJLoginViewController.h */,
+				18F15C2C23D466A700D21517 /* RJLoginViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		18F15C2423D411C900D21517 /* Modles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Modles;
+			sourceTree = "<group>";
+		};
+		18F15C2523D411FA00D21517 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1857F2D523D2D9E100914FB9 /* RJWechatManager.h */,
+				1857F2D623D2D9E100914FB9 /* RJWechatManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		18F15C2623D4506100D21517 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				1857F2D123D2D9E100914FB9 /* WeChatSDK1.8.6.1 */,
+				1857F2DB23D2D9E100914FB9 /* InviteFriends */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -138,13 +202,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1857F2E123D2D9E100914FB9 /* RJButton.h in Headers */,
+				180AECF22404BF9400F3EAE9 /* WXMediaMessage+MessageConstruct.h in Headers */,
+				18F15C2923D453FB00D21517 /* LoginView.h in Headers */,
 				1857F2E423D2D9E100914FB9 /* RJWechatManager.h in Headers */,
 				1857F2E323D2D9E100914FB9 /* WXApi.h in Headers */,
 				1857F2E623D2D9E100914FB9 /* WXApiObject.h in Headers */,
+				180AECF62404C58500F3EAE9 /* SendMessageToWXReq+requestMediaMessage.h in Headers */,
 				1857F2EC23D2D9E100914FB9 /* ResultOfSearchVC.h in Headers */,
 				1857F2EB23D2D9E100914FB9 /* InviteFriendsVC.h in Headers */,
 				1857F2CA23D2D9A200914FB9 /* RJManagerTool.h in Headers */,
 				1857F2E823D2D9E100914FB9 /* WechatAuthSDK.h in Headers */,
+				18F15C2D23D466A700D21517 /* RJLoginViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,10 +309,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F15C2E23D466A700D21517 /* RJLoginViewController.m in Sources */,
+				180AECF72404C58500F3EAE9 /* SendMessageToWXReq+requestMediaMessage.m in Sources */,
 				1857F2ED23D2D9E100914FB9 /* InviteFriendsVC.m in Sources */,
 				1857F2EE23D2D9E100914FB9 /* RJButton.m in Sources */,
 				1857F2EA23D2D9E100914FB9 /* ResultOfSearchVC.m in Sources */,
+				18F15C2A23D453FB00D21517 /* LoginView.m in Sources */,
 				1857F2E523D2D9E100914FB9 /* RJWechatManager.m in Sources */,
+				180AECF32404BF9400F3EAE9 /* WXMediaMessage+MessageConstruct.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
