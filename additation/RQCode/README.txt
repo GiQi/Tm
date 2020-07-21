@@ -1,0 +1,2 @@
+1.导入coreimage.framework
+2.添加微信白名单 LSApplicationQueriesSchemes
